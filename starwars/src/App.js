@@ -5,6 +5,12 @@ import axios from "axios";
 import CharacterContainer from './components/CharacterContainer';
 import Button from './components/Button';
 
+const StyledSpan = styled.span`
+  font-size:40px; 
+  font-weight:700;
+  color:white;
+`;
+
 const App = () => {
   const [characters, setCharacters] = useState([]);
   const [url, setUrl] = useState("https://swapi.co/api/people/")
@@ -42,8 +48,9 @@ const App = () => {
     <div className="App">
       <h1 className="Header">React Wars</h1>
       <CharacterContainer characters={characters}></CharacterContainer>
-      <Button className="left" onClick={leftClick} name={"U+00AB"}></Button>
-      <Button className="right" onClick={rightClick} name={"U+00BB"}></Button>
+      <Button className="left" onClick={leftClick} name={"\u00AB"}></Button>
+      <StyledSpan>Page</StyledSpan>
+      <Button className="right" onClick={rightClick} name={"\u00BB"}></Button>
     </div>
   );
 }
