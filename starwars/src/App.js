@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react';
 import './App.css';
 import styled from "styled-components";
 import axios from "axios";
+import CharacterContainer from './components/CharacterContainer';
+import Button from './components/Button';
 
 const App = () => {
   const [characters, setCharacters] = useState([]);
@@ -20,16 +22,28 @@ const App = () => {
       })
   }, [url])
 
-  // Try to think through what state you'll need for this app before starting. Then build out
-  // the state properties here.
+  const leftClick = () => {
+    if (buttonEval.previous == null) {
+      return null;
+    } else {
+      setUrl(buttonEval.previous)
+    }
+  }
+  const rightClick = () => {
+    if (buttonEval.next == null) {
+      return null;
+    } else {
+      setUrl(buttonEval.next)
+    }
+  }
 
-  // Fetch characters from the star wars api in an effect hook. Remember, anytime you have a 
-  // side effect in a component, you want to think about which state and/or props it should
-  // sync up with, if any.
 
   return (
     <div className="App">
       <h1 className="Header">React Wars</h1>
+      <CharacterContainer characters={characters}></CharacterContainer>
+      <Button className="left" onClick={leftClick} name={"U+00AB"}></Button>
+      <Button className="right" onClick={rightClick} name={"U+00BB"}></Button>
     </div>
   );
 }
