@@ -1,7 +1,25 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import './App.css';
+import styled from "styled-components";
+import axios from "axios";
 
 const App = () => {
+  const [characters, setCharacters] = useState([]);
+  const [url, setUrl] = useState("https://swapi.co/api/people/")
+  const [buttonEval, setButtonEval] = useState({})
+  useEffect(() => {
+    axios
+      .get(url)
+      .then(response => {
+        console.log(response);
+        setCharacters(response.data.results);
+        setButtonEval(response.data);
+      })
+      .catch(error => {
+        console.log("error from axios", error);
+      })
+  }, [url])
+
   // Try to think through what state you'll need for this app before starting. Then build out
   // the state properties here.
 

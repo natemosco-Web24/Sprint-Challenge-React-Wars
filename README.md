@@ -77,7 +77,7 @@ Your finished project must include all of the following requirements:
 
 #### Required best practices:
 
-- [ ] Consistent naming. Examples: variables, functions, Components, and file/folder organization.
+- [ ] Consistent naming. Examples: variables, functions, Components, and file/folder organization. 
 - [ ] Consistent spacing. Examples: line breaks, around arguments and before/after functions.
 - [ ] Consistent quotation usage.
 - [ ] Spell-check.
