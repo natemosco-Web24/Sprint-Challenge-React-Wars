@@ -26,13 +26,21 @@ Demonstrate your understanding of this Sprint's concepts by answering the follow
 
 - [ ] What is React JS and what problems does it try and solve? Support your answer with concepts introduced in class and from your personal research on the web.
 
+React is a library that seeks to provide an answer to the problem DONT REPEAT YOURSELF. This is solved by introducing the concept of component creation. The components made and styled once can be reused by you at any point elsewhere in the project and if compartmentalized correctly can also be imported to other projects. In class we saw just this as reactstrap allowed us to import pre-built/pre-styled components into our projects.
+
 - [ ] What does it mean to _think_ in react?
+
+I believe this refers to thinking in small chunks and big picture. Big picture is to think "how can I reuse my work here later on" and small picture is to think "how can I compartmentalize this down to make debugging easier as well as more customizable." React is a giant puzzle where the pieces you make will ultimately fit together to make the larger picture.
 
 - [ ] Describe state.
 
+State is the only place that memory can be stored. In JS you can do this in a simple variable. However, with react the code gets re-run and re-rendered over and over which cleans the slate every time. State is a variable value that can be updated by use of setState(). Without state we could not make a website dynamic or implement JS logic statements to control the behavior of components on a webpage. 
+
 - [ ] Describe props.
+Props can be thought of as the value that was passed down to the child component in an inheritance model. The parent gets a variable, the child gets access through the family tree by use of props.variable name, grandchild gets access to the same variable by calling props.variable name and so forth. Without Props there is no way to access the data passed into the parent function. 
 
 - [ ] What are side effects, and how do you sync effects in a React component to state or prop changes?
+Side effects are what happen upon the re-render of a page due to a change in some slice of state. This allows the desired effect to take place 1. every time the referenced state changes 2. Only the first time the referenced state changes or 3. only upon the first render of the webpage. The way that the effects are synced to a state is by referencing that state or prop within the dependency array at the end of the effect: ,[ stateIsFoodReady];.
 
 ## Project Set Up
 
