@@ -15,6 +15,8 @@ const App = () => {
   const [characters, setCharacters] = useState([]);
   const [url, setUrl] = useState("https://swapi.co/api/people/")
   const [buttonEval, setButtonEval] = useState({})
+  const [allCharacters, setAllCharacters] = useState([])
+  const [uselesDependencyHolder, setUselesDependencyHolder] = useState([])
   useEffect(() => {
     axios
       .get(url)
@@ -27,6 +29,83 @@ const App = () => {
         console.log("error from axios", error);
       })
   }, [url])
+
+  //THIS NEXT USE EFFECT IS FOR THE FILTER STRETCH GOAL
+  useEffect(() => {
+    axios
+      .get("https://swapi.co/api/people/")
+      .then(response => {
+        setAllCharacters([...allCharacters, ...response.data.results])
+      })
+      .catch(error => {
+        console.log("axios 1 error", error)
+      })
+    axios
+      .get("https://swapi.co/api/people/?page=2")
+      .then(response => {
+        setAllCharacters([...allCharacters, ...response.data.results])
+      })
+      .catch(error => {
+        console.log("axios 2 error", error)
+      })
+    axios
+      .get("https://swapi.co/api/people/?page=3")
+      .then(response => {
+        setAllCharacters([...allCharacters, ...response.data.results])
+      })
+      .catch(error => {
+        console.log("axios 3 error", error)
+      })
+    axios
+      .get("https://swapi.co/api/people/?page=4")
+      .then(response => {
+        setAllCharacters([...allCharacters, ...response.data.results])
+      })
+      .catch(error => {
+        console.log("axios 4 error", error)
+      })
+    axios
+      .get("https://swapi.co/api/people/?page=5")
+      .then(response => {
+        setAllCharacters([...allCharacters, ...response.data.results])
+      })
+      .catch(error => {
+        console.log("axios 5 error", error)
+      })
+    axios
+      .get("https://swapi.co/api/people/?page=6")
+      .then(response => {
+        setAllCharacters([...allCharacters, ...response.data.results])
+      })
+      .catch(error => {
+        console.log("axios 6 error", error)
+      })
+    axios
+      .get("https://swapi.co/api/people/?page=7")
+      .then(response => {
+        setAllCharacters([...allCharacters, ...response.data.results])
+      })
+      .catch(error => {
+        console.log("axios 7 error", error)
+      })
+    axios
+      .get("https://swapi.co/api/people/?page=8")
+      .then(response => {
+        setAllCharacters([...allCharacters, ...response.data.results])
+      })
+      .catch(error => {
+        console.log("axios 8 error", error)
+      })
+    axios
+      .get("https://swapi.co/api/people/?page=9")
+      .then(response => {
+        setAllCharacters([...allCharacters, ...response.data.results])
+      })
+      .catch(error => {
+        console.log("axios 9 error", error)
+      })
+    console.log("allCharacters", allCharacters)
+  }, [uselesDependencyHolder])
 
   const leftClick = () => {
     if (buttonEval.previous == null) {

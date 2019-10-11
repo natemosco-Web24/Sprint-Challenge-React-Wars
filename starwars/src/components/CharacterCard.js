@@ -6,6 +6,7 @@ const StyledCharacterCard = styled.div`
     height:300px;
     background-color:#000b;
     color: white;
+    margin-bottom:20px;
 `;
 
 export default function CharacterCard(props) {
